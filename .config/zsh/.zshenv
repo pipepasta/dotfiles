@@ -23,6 +23,8 @@ export MISE_CARGO_HOME="$CARGO_HOME"
 export MISE_RUSTUP_HOME="$RUSTUP_HOME"
 
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+export DOCKER_HOST="unix://$XDG_CONFIG_HOME/colima/default/docker.sock"
+export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE="/var/run/docker.sock"
 export GOPATH="$XDG_DATA_HOME/go"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export LESSHISTFILE="$XDG_STATE_HOME/less/history"
