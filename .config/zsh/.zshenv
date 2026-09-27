@@ -15,6 +15,7 @@ export ANDROID_USER_HOME="$XDG_DATA_HOME/android"
 # AWS CLI
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
+export AWS_LOGIN_CACHE_DIRECTORY="$XDG_CACHE_HOME/aws/login/cache"
 
 # Rust
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
