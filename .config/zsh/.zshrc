@@ -1,3 +1,6 @@
+# Ghostty shell integration manually
+[[ -n $GHOSTTY_RESOURCES_DIR ]] && source "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration"
+
 # enabling plugins
 eval "$(sheldon source)"
 eval "$(/opt/homebrew/bin/mise activate zsh)"
