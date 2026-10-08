@@ -11,6 +11,8 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Android
 export ANDROID_USER_HOME="$XDG_DATA_HOME/android"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
 
 # AWS CLI
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
