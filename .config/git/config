@@ -1,5 +1,6 @@
 [credential]
-	helper = !gh auth git-credential
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
 
 [fetch]
 	prune = true
@@ -48,6 +49,7 @@
 	navigate = true
 	line-numbers = true
 	side-by-side = true
+	word-diff-regex = [\\p{Han}\\p{Hiragana}\\p{Katakana}]|[A-Za-z0-9_]+
 
 [alias]
 	st = status
