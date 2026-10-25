@@ -1,3 +1,6 @@
+# Keep PATH entries unique even when .zshenv is re-sourced by nested shells
+typeset -U path PATH
+
 # XDG Base Directory Specification
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
