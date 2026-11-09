@@ -1,0 +1,3 @@
+# gh CLI extensions installed by install.sh (one owner/repo per line)
+github/gh-actions-lock
+github/gh-stack

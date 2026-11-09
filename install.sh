@@ -7,6 +7,7 @@
 #   4. Symlink every file tracked by this repo into $HOME
 #   5. Install dev tool versions pinned in .config/mise/config.toml
 #   6. Install Claude Code via the official native installer if missing
+#   7. Install gh CLI extensions listed in gh-extensions
 #
 # Usage: ./install.sh
 
@@ -33,7 +34,7 @@ install_brew_bundle() {
 
 link_dotfiles() {
   log "Symlinking dotfiles into \$HOME"
-  local excludes=("README.md" "install.sh" ".gitignore" )
+  local excludes=("README.md" "install.sh" ".gitignore" "Brewfile" "gh-extensions")
   while IFS= read -r -d '' rel_path; do
     for excl in "${excludes[@]}"; do
       [[ "$rel_path" == "$excl" ]] && continue 2
@@ -99,6 +100,16 @@ install_mise_tools() {
   fi
 }
 
+install_gh_extensions() {
+  log "Installing gh extensions from gh-extensions"
+  local ext
+  while read -r ext; do
+    [[ -z "$ext" || "$ext" == \#* ]] && continue
+    # --force: no-op when already latest. Non-fatal: may fail before 'gh auth login'.
+    gh extension install --force "$ext" || log "WARN: failed to install $ext, run 'gh auth login' and re-run"
+  done <"$REPO_DIR/gh-extensions"
+}
+
 check_gitconfig_local() {
   local gitconfig_local="$HOME/.config/git/config.local"
   if [ ! -e "$gitconfig_local" ]; then
@@ -126,6 +137,7 @@ main() {
   prune_legacy_zsh_links
   install_claude_code
   install_mise_tools
+  install_gh_extensions
   check_gitconfig_local
   log "Done. Open a new shell or run 'exec zsh'"
 }

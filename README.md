@@ -7,7 +7,7 @@ My personal dotfiles for macOS and zsh.
 ### XDG style
 
 Everything tracked here lives under `~/.config`, including the zsh config files
-(`Brewfile` and `install.sh` stay at the repo root and are never symlinked).
+(`Brewfile`, `gh-extensions` and `install.sh` stay at the repo root and are never symlinked).
 
 ### Auth isolation
 
@@ -36,7 +36,8 @@ The script does the following:
 3. Run `brew bundle` to install packages, casks, and VS Code extensions from `Brewfile`
 4. Symlink every file tracked by this repo into `$HOME` (existing files get moved to `~/.dotfiles_backup/` first), then drop the pre-`ZDOTDIR` symlinks
 5. Run `mise install` to pull in the tool versions pinned in `.config/mise/config.toml`
-6. Remind you to create `~/.config/git/config.local` if it's missing
+6. Install the gh CLI extensions listed in `gh-extensions`
+7. Remind you to create `~/.config/git/config.local` if it's missing
 
 Run it from a real terminal: `sudo` reads the password from the terminal device,
 so piping the script through something without a TTY makes step 1 fail.
