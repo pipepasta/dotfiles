@@ -24,6 +24,8 @@ brew "ripgrep"
 brew "uv"
 brew "httpie"
 brew "witr"
+brew "gomi"
+
 cask "codex" # OpenAI Codex CLI
 
 # Shell Customization
